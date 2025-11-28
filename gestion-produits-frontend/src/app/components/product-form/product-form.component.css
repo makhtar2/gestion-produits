@@ -1,0 +1,13 @@
+/* Styles pour le titre du formulaire */
+h3 {
+    border-bottom: 2px solid #28a745; /* Ligne verte sous le titre */
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    color: #343a40; /* Couleur sombre */
+}
+
+/* Amélioration des champs (Bootstrap fait déjà beaucoup, mais on peut ajouter un focus) */
+.form-control:focus {
+    border-color: #28a745; /* Vert pour le focus */
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}

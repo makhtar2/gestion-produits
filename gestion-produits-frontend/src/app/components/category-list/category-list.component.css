@@ -1,0 +1,17 @@
+/* Styles pour un tableau moderne */
+.table th {
+    background-color: var(--primary-color); 
+    color: white;
+    border-color: var(--primary-color);
+    font-weight: 500;
+}
+
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(52, 73, 94, 0.03); 
+}
+
+
+.table tbody tr:hover {
+    background-color: #eaf1f7; 
+}

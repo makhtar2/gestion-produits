@@ -1,0 +1,45 @@
+<div class="row">
+       <div class="col-12 admin-dashboard-container">
+        
+     <h1 class="espace">Espace d'Administration</h1> 
+        <hr> 
+        
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a 
+                    class="nav-link"
+                    [class.active]="isTabActive('produits')" 
+                    (click)="setActiveTab('produits')"
+                    href="#"
+                >
+                    Gestion des Produits
+                </a>
+            </li>
+            <li class="nav-item">
+                <a 
+                    class="nav-link" 
+                    [class.active]="isTabActive('categories')" 
+                    (click)="setActiveTab('categories')"
+                    href="#"
+                >
+                    Gestion des Catégories
+                </a>
+            </li>
+        </ul>
+
+    
+        <div class="tab-content mt-3">
+            
+            <!-- Contenu de l'onglet Produits (affiché si l'onglet 'produits' est actif) -->
+            <div *ngIf="isTabActive('produits')" class="tab-pane active">
+                <app-product-list></app-product-list>
+            </div>
+
+            <!-- Contenu de l'onglet Catégories (affiché si l'onglet 'categories' est actif) -->
+            <div *ngIf="isTabActive('categories')" class="tab-pane active">
+                <app-category-list></app-category-list>
+            </div>
+        </div>
+
+    </div>
+</div>

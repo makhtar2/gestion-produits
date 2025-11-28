@@ -1,0 +1,38 @@
+/* Importation de Bootstrap */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+:root {
+    /* Couleurs principales */
+    --primary-color: #34495e; 
+    --accent-color: #1abc9c;  
+    --bg-color: #f4f6f9;      
+    --text-color: #333;       
+    --light-text-color: #7f8c8d; 
+}
+
+/* Styles Généraux du Corps */
+body {
+    background-color: var(--bg-color); 
+    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+}
+
+.container {
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
+    padding: 30px;
+    border-radius: 12px; 
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+h1 {
+    color: var(--primary-color);
+    font-weight: 300; 
+    margin-bottom: 25px;
+}
+
+hr {
+    border-color: var(--primary-color);
+    opacity: 0.15; 
+}

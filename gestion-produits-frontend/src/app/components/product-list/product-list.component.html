@@ -1,0 +1,49 @@
+<div class="row mt-4">
+    <div class="col-md-7">
+        <h2>Liste des Produits</h2>
+
+        <table *ngIf="products.length > 0; else noProducts" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nom</th>
+                    <th>Prix</th>
+                    <th>Catégorie</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of products">
+    <td>{{ product.id }}</td>
+    <td>{{ product.nom }}</td>
+    <td>{{ product.prix | currency:'XOF ':'symbol':'1.2-2' }}</td>
+    <td>{{ product.categorie_detail?.nom }}</td> 
+    
+    <td> 
+        <button class="btn btn-sm btn-info me-2" (click)="selectProduct(product)">Modifier</button>
+        <button class="btn btn-sm btn-danger" (click)="deleteProduct(product.id)">Supprimer</button>
+    </td>
+</tr>
+            </tbody>
+        </table>
+
+        <ng-template #noProducts>
+            <p>Aucun produit trouvé. Veuillez en ajouter un en utilisant le formulaire ci-contre.</p>
+        </ng-template>
+    </div>
+
+    <div class="col-md-5">
+        <button 
+            *ngIf="selectedProduct" 
+            class="btn btn-sm btn-warning mb-2" 
+            (click)="cancelEdit()"
+        >
+            Annuler l'édition
+        </button>
+        
+        <app-product-form 
+            [product]="selectedProduct" 
+            (productAdded)="loadProducts()"
+        ></app-product-form>
+    </div>
+</div>

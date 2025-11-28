@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="col-md-6">
+        <h2>Liste des Catégories</h2>
+
+        <table *ngIf="categories.length > 0; else noCategories" class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nom</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let category of categories">
+                    <td>{{ category.id }}</td>
+                    <td>{{ category.nom }}</td>
+                    <td>
+                        <button class="btn btn-sm btn-info me-2">Modifier</button>
+                        <button class="btn btn-sm btn-danger" (click)="deleteCategory(category.id)">Supprimer</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <ng-template #noCategories>
+            <p>Aucune catégorie trouvée.</p>
+        </ng-template>
+    </div>
+
+    <div class="col-md-6">
+        <app-category-form (categoryAdded)="loadCategories()"></app-category-form>
+    </div>
+</div>

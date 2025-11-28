@@ -1,0 +1,17 @@
+/* Styles pour un tableau moderne */
+.table th {
+    background-color: black;  /* Entête de couleur primaire profonde */
+    color: white;
+    border-color: var(--primary-color);
+    font-weight: 500;
+}
+
+/* Alternance de couleurs subtile */
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(52, 73, 94, 0.03); 
+}
+
+/* Effet de survol */
+.table tbody tr:hover {
+    background-color: #eaf1f7; /* Gris-bleu très léger */
+}

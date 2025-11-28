@@ -1,0 +1,30 @@
+<h3>Ajouter une nouvelle catégorie</h3>
+
+<form [formGroup]="categoryForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+        <label for="nom" class="form-label">Nom de la Catégorie</label>
+        
+        <input 
+            type="text" 
+            class="form-control" 
+            id="nom" 
+            formControlName="nom" 
+            placeholder="Ex: Électronique"
+        >
+        
+        <div 
+            *ngIf="categoryForm.get('nom')?.invalid && categoryForm.get('nom')?.touched" 
+            class="text-danger"
+        >
+            Le nom de la catégorie est obligatoire.
+        </div>
+    </div>
+    
+    <button 
+        type="submit" 
+        class="btn btn-success"
+        [disabled]="categoryForm.invalid"
+    >
+        Ajouter
+    </button>
+</form>

@@ -1,0 +1,63 @@
+/* Styles spécifiques au composant AdminDashboardComponent 
+Basé sur les variables globales définies dans styles.css
+*/
+
+/* 1. Conteneur global */
+.admin-dashboard-container {
+    padding: 20px;
+    /* Utilisation de l'ombre globale pour l'effet de carte */
+    /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); */
+    border-radius: 12px;
+    background-color: #ffffff;
+   
+}
+.espace {
+    color: rgb(44, 20, 55);
+    }
+
+
+/* 2. Styles des Onglets (nav-tabs) */
+
+.nav-tabs {
+    border-bottom: 2px solid #e9ecef; /* Ligne de séparation subtile */
+    margin-bottom: 25px;
+}
+
+/* 3. Style des Liens d'Onglet (nav-link) */
+.nav-link {
+    color: var(--light-text-color); /* Couleur du texte secondaire (gris) */
+    font-weight: 500;
+    padding: 12px 20px; /* Augmenter la zone cliquable */
+    border: none;
+    border-radius: 8px 8px 0 0; /* Coins arrondis uniquement en haut */
+    transition: all 0.2s ease-in-out;
+}
+
+/* Style de l'onglet non actif au survol */
+.nav-link:hover:not(.active) {
+    color: var(--primary-color); /* Texte principal au survol */
+    background-color: #f4f6f9; /* Arrière-plan très clair au survol */
+    border-color: transparent;
+}
+
+/* 4. Style de l'Onglet Actif (Sélectionné) */
+.nav-link.active {
+    color: white !important; /* Texte blanc */
+    background-color: var(--primary-color) !important; /* Couleur primaire pour l'arrière-plan */
+    border-color: var(--primary-color) !important;
+    /* Ombre légère pour donner l'effet de surélévation */
+    box-shadow: 0 -2px 10px rgba(52, 73, 94, 0.1); 
+    z-index: 10;
+    position: relative;
+    padding-bottom: 15px; /* Dépasser légèrement pour couvrir la bordure du nav-tabs */
+}
+
+/* 5. Contenu des Onglets */
+.tab-content {
+    padding: 20px;
+    border: 1px solid #e9ecef; /* Bordure discrète autour du contenu */
+    border-top: none; /* Supprimer la bordure du haut car elle est cachée par l'onglet actif */
+    border-radius: 0 0 12px 12px;
+    background-color: #ffffff;
+    min-height: 500px; /* Assurer une hauteur minimale pour une meilleure mise en page */
+}
